@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block title %}Последние обновления на сайте{% endblock %}
+{% extends "base.html" %} <!-- Объявляем base.html родителем  индекс хтмла  и грузим весь код из него, а далее, просто вызываем нужные параметры и переопределяем значения внутри них.-->
+{% block title %} Последние обновления {% endblock %}
 {% block content %}
 
     {% for post in posts %}
@@ -11,4 +11,3 @@
     {% endfor %}
 
 {% endblock %}
-
