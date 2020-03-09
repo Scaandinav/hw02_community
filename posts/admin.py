@@ -1,11 +1,14 @@
 from django.contrib import admin
-from .models import CD
+
+from posts.models import Group, Post
 
 
-class CDAdmin(admin.ModelAdmin):
-    list_display = ("title", "date", "artist", "genre")
-    empty_value_display = "-пусто-"
-    list_filter = ("date", "genre")
+class PostAdmin(admin.ModelAdmin):
+    list_display = ("pk", "text", "pub_date", "author")
+    search_fields = ("text",)
+    list_filter = ("pub_date",)
+    empty_value_display = '-пусто-'
 
 
-admin.site.register(CD, CDAdmin)
+admin.site.register(Group)
+admin.site.register(Post, PostAdmin)
