@@ -11,8 +11,9 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ("pub_date",) 
     empty_value_display = '-пусто-' # это свойство сработает для всех колонок: где пусто - там будет эта строка
 
-# при регистрации модели Post источником конфигурации для неё назначаем класс PostAdmin
+
 admin.site.register(Post, PostAdmin)
+
 
 class GroupAdmin(admin.ModelAdmin):
     # перечисляем поля, которые должны отображаться в админке
