@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-User = get_user_model()
+user = get_user_model()
 
 
 class Group(models.Model):
@@ -16,8 +16,5 @@ class Group(models.Model):
 class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField("date published", auto_now_add=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_author")
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name="group_posts", blank=True, null=True)
-
-    def __str__(self):
-        return self.text
+    author = models.ForeignKey(user, on_delete=models.CASCADE, related_name="post_author")
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, blank=True, null=True)
