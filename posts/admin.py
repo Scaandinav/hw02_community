@@ -23,5 +23,6 @@ class GroupAdmin(admin.ModelAdmin):
     # добавляем возможность фильтрации по дате
     empty_value_display = '-пусто-' # это свойство сработает для всех колонок: где пусто - там будет эта строка
 
+
 # при регистрации модели Post источником конфигурации для неё назначаем класс PostAdmin
 admin.site.register(Group, GroupAdmin)
